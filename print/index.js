@@ -9,7 +9,7 @@ const os = require("os");
 const app = express();
 const PORT = 3111;
 
-const MAIN_SERV_VERSION = "1.0.0";
+const MAIN_SERV_VERSION = "Beta 0.1.0";
 
 // find local ip
 const interfaces = os.networkInterfaces();
@@ -136,7 +136,7 @@ app.post("/update-updater", (req, res) => {
 			// Then, update the updater.js file
 			const updaterPath = path.join(__dirname, "updater.js");
 
-			fetch("https://alphabrate.github.io/code/printer/updater.js")
+			fetch("https://alphabrate.github.io/code/print/updater.js")
 				.then((response) => response.text())
 				.then((newUpdaterCode) => {
 					fs.writeFile(updaterPath, newUpdaterCode, (err) => {
