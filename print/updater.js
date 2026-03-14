@@ -6,7 +6,7 @@ const fs = require("fs");
 const app = express();
 const PORT = 3123; // Port for the updater service
 
-const UPDATE_SERV_VERSION = "1.0.0";
+const UPDATE_SERV_VERSION = "Beta 0.1.0";
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -47,7 +47,7 @@ app.post("/update", async (req, res) => {
 
 		// 2. Fetch the latest code for index.js
 		console.log("Fetching latest index.js from GitHub...");
-		const indexJsUrl = "https://alphabrate.github.io/code/printer/index.js";
+		const indexJsUrl = "https://alphabrate.github.io/code/print/index.js";
 		const response = await fetch(indexJsUrl);
 		if (!response.ok) {
 			throw new Error(`Failed to fetch index.js: ${response.statusText}`);
